@@ -7,8 +7,6 @@ import {data} from "./components/Doubled"
 import Person from  './Person/Person'
 import Content from  './Person/Dynamiccontent'
 
-
-
 function App() {
   return (
     <div>
