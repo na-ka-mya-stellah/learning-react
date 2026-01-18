@@ -3,6 +3,8 @@ import React from 'react'
 // example 2
 
 // making our components configurable and flexible
+// working with props
+
 
 const Person = (props) => {
     return(

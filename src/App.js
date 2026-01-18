@@ -1,29 +1,59 @@
 
 // example 1
-import Read from "./components/Read"; // import the file, React will get the function
+import React, { Component } from "react";
+import Read from "./components/Read";
 import Count from "./components/Count";
-import {desiredGames} from "./components/Doubled"
-import {data} from "./components/Doubled"
-import Person from  './Person/Person'
-import Content from  './Person/Dynamiccontent'
+import Person from "./Person/Person";
+import Content from "./Person/Dynamiccontent";
 
-function App() {
-  return (
-    <div>
-      <Read />
-      <Count/> 
-      {desiredGames}
-      {data} 
+class App extends Component {
 
-      {/* making a component configurable,flexible and dynamic  */}
+  state = {
+    persons: [
+      { name: "jordan", age: 20 },
+      { name: "manzi", age: 22 },
+      { name: "blair", age: 24 }
+    ]
+  };
 
-      <Person name ='jordan' age = '20' />
-      <Person name = 'manzi' age = '22'/>
-      <Person name = 'blair' age = '24'> My Most loved game is basketball</Person>
-      <Content/>
-    
-    </div>
-  );
+  switchNameHandler = () => {
+    this.setState({
+      persons: [
+        { name: "jordan Ayu", age: 20 },
+        { name: "manzi felix", age: 22 },
+        { name: "blair rwahigi", age: 24 }
+      ]
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Read />
+        <Count />
+        <button onClick={this.switchNameHandler}>
+          switch name
+        </button>
+
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+        />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+        />
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age}
+        >
+          My Most loved game is basketball
+        </Person>
+
+        <Content />
+      </div>
+    );
+  }
 }
 
 export default App;
