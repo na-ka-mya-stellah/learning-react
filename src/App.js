@@ -7,57 +7,69 @@ import Person from "./Person/Person";
 import Content from "./Person/Dynamiccontent";
 
 
+
 class App extends Component {
 
   state = {
+   
     persons: [
       { name: "jordan", age: 20 },
       { name: "manzi", age: 22 },
-      { name: "blair", age: 24 }
-    ]
+      { name: "blair", age: 24 },
+    ],
   };
 
   switchNameHandler = () => {
     this.setState({
       persons: [
-        { name: 'jordan ayu', age: 20 },
+        { name: "jordan ayu", age: 20 },
         { name: "manzi felix", age: 22 },
-        { name: "blair rwahigi", age: 24 }
-      ]
+        { name: "blair rwahigi", age: 24 },
+      ],
     });
   };
 
   nameChangedHandler = (event) => {
     this.setState({
       persons: [
-        { name: 'jordan ayu', age: 20 },
+        { name: "jordan ayu", age: 20 },
         { name: event.target.value, age: 22 },
-        { name: "blair rwahigi", age: 24 }
-      ]
+        { name: "blair rwahigi", age: 24 },
+      ],
     });
-  }
+  };
 
   render() {
+
+    // inline styling the button
+    const style = {
+      backgroundColor: "white",
+      font: "inherit",
+      border: "1px solid blue",
+      padding: "8px",
+      cursor: "pointer",
+    };
     return (
       <div>
         <Read />
         <Count />
-        <button onClick={this.switchNameHandler}>
+        
+        <button style={style} onClick={this.switchNameHandler}>
           switch name
         </button>
 
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
-          click = {this.switchNameHandler.bind}
+          click={this.switchNameHandler}
         />
 
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
-          changed = {this.nameChangedHandler} 
-          
+          changed={this.nameChangedHandler}
         />
+
 
         <Person
           name={this.state.persons[2].name}

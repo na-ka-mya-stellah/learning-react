@@ -1,5 +1,6 @@
 
 import React from 'react'
+import './Person.css';
 // example 2
 
 // making our components configurable and flexible
@@ -8,7 +9,7 @@ import React from 'react'
 
 const Person = (props) => {
     return(
-        <div>
+        <div className = 'Person'>
 
         <p onClick = {props.click}>I'am {props.name} and i am {props.age} years </p>
 

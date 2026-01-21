@@ -5,8 +5,8 @@ import MyApp from './Person/state';
 import reportWebVitals from './reportWebVitals';
 import StatelessComponent from './Person/stateless';
 import Stateful from  './Person/stateful';
-
 import App from './App'
+import Assignment from './UserInput/Assignment';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +14,7 @@ root.render(
     <MyApp />
     <StatelessComponent/>
     <Stateful/>
-    
+    <Assignment/>
     <App/>
   </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Person from './Person'
 
+// working with the UseState hook in function based components
 
 const MyApp = (props) => {
     const [personsState, setPersonsState] = useState({
