@@ -6,6 +6,7 @@ import Count from "./components/Count";
 import Person from "./Person/Person";
 import Content from "./Person/Dynamiccontent";
 
+
 class App extends Component {
 
   state = {
@@ -19,12 +20,22 @@ class App extends Component {
   switchNameHandler = () => {
     this.setState({
       persons: [
-        { name: "jordan Ayu", age: 20 },
+        { name: 'jordan ayu', age: 20 },
         { name: "manzi felix", age: 22 },
         { name: "blair rwahigi", age: 24 }
       ]
     });
   };
+
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: 'jordan ayu', age: 20 },
+        { name: event.target.value, age: 22 },
+        { name: "blair rwahigi", age: 24 }
+      ]
+    });
+  }
 
   render() {
     return (
@@ -38,11 +49,16 @@ class App extends Component {
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
+          click = {this.switchNameHandler.bind}
         />
+
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
+          changed = {this.nameChangedHandler} 
+          
         />
+
         <Person
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}

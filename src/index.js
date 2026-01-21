@@ -6,12 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import StatelessComponent from './Person/stateless';
 import Stateful from  './Person/stateful';
 
+import App from './App'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <MyApp />
     <StatelessComponent/>
     <Stateful/>
+    
+    <App/>
   </React.StrictMode>
 );
 
