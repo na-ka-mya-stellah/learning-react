@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// Local components live in sibling folders; adjust paths accordingly
+// added file extensions for compilation
 import Userinput from "./Userinput.js";
 import Useroutput from "../UserOutput/Useroutput.js";
 
