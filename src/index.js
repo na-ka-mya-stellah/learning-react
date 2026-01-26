@@ -7,7 +7,8 @@ import StatelessComponent from './Person/stateless';
 import Stateful from  './Person/stateful';
 import App from './App'
 import Assignment from './UserInput/Assignment';
-import Job from './MODULE TWO/Conditionally'
+import Job from './MODULE TWO/Conditionally';
+import Way from './MODULE TWO/javascript';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
     <Assignment/>
     <App/>
     <Job/>
+    <Way/>
   </React.StrictMode>
 );
 

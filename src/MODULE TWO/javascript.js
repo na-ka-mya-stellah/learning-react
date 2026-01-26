@@ -1,7 +1,6 @@
-
 import {Component} from 'react';
 import Person from './helper.js'
-class Job extends Component {
+class Way extends Component {
   state = {
    
     persons: [
@@ -48,17 +47,10 @@ class Job extends Component {
       padding: "8px",
       cursor: "pointer",
     };
-    return (
-      <div>
-        <Person/>
-        
-        <button style={style} onClick={this.togglePersonHandler}>
-          show name
-        </button>
 
-       {  
-       this.state.showPersons === true ? 
-        <div>
+    let persons = null; 
+    if (this.state.showPersons){
+        persons = ( <div>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
@@ -78,10 +70,21 @@ class Job extends Component {
         >
           My Most loved game is basketball
         </Person>
-        </div> : null}
-      </div>
+        </div>)
+    }
+    return (
+      <div>
+        <Person/>
+        
+        <button style={style} onClick={this.togglePersonHandler}>
+          toggle name
+        </button> 
+
+        {persons}
+        </div>
+      
     );
   }
 }
 
-export default Job;
+export default Way;

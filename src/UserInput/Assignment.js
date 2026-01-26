@@ -26,9 +26,5 @@ class assignment extends Component {
     )
 }
 
-
 }
-
-
-
 export default assignment;
