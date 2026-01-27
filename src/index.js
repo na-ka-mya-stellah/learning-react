@@ -9,6 +9,7 @@ import App from './App'
 import Assignment from './UserInput/Assignment';
 import Job from './MODULE TWO/Conditionally';
 import Way from './MODULE TWO/javascript';
+import Output from './MODULE TWO/lists';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
     <App/>
     <Job/>
     <Way/>
+    <Output/>
   </React.StrictMode>
 );
 
