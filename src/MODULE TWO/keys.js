@@ -1,18 +1,18 @@
 import { Component } from 'react';
 import Person from './helper.js';
-class Output extends Component {
+class state extends Component {
   state = {
     persons: [
-      { name: 'jordan', age: 20 },
-      { name: 'manzi', age: 22 },
-      { name: 'blair', age: 24 },
+      {id : 'can', name : 'jordan', age: 20 },
+      {id : 'buzz', name: 'manzi', age: 22 },
+      {id : 'boom', name: 'blair', age: 24 },
     ],
     showPersons: true,
   };
 
   // delete one person (immutably) based on its index in the array
   deletePersonHandler = (personIndex) => {
-    const persons = [this.state.persons]; // create a copy, don't mutate state directly
+    const persons = [...this.state.persons]; // create a copy, don't mutate state directly
     persons.splice(personIndex, 1);
     this.setState({ persons });
   };
@@ -49,8 +49,8 @@ class Output extends Component {
         <div>
           {this.state.persons.map((person, index) => (
             <Person
-              key={person.name}
               click={() => this.deletePersonHandler(index)}
+              key = {person.id}
               name={person.name}
               age={person.age}
               changed={this.nameChangedHandler}
@@ -64,7 +64,7 @@ class Output extends Component {
     return (
       <div>
         <button style={style} onClick={this.togglePersonHandler}>
-          delete persons
+          key and state
         </button>
 
         {persons}
@@ -73,4 +73,4 @@ class Output extends Component {
   }
 }
 
-export default Output;
+export default state;

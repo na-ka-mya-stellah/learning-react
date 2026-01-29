@@ -10,6 +10,8 @@ import Assignment from './UserInput/Assignment';
 import Job from './MODULE TWO/Conditionally';
 import Way from './MODULE TWO/javascript';
 import Output from './MODULE TWO/lists';
+import Delete from './MODULE TWO/immutable';
+import Key from './MODULE TWO/keys'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +24,8 @@ root.render(
     <Job/>
     <Way/>
     <Output/>
+    <Delete/>
+    <Key/>
   </React.StrictMode>
 );
 
