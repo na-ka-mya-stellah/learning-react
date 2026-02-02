@@ -12,6 +12,7 @@ import Way from './MODULE TWO/javascript';
 import Output from './MODULE TWO/lists';
 import Delete from './MODULE TWO/immutable';
 import Key from './MODULE TWO/keys'
+import Flexible from './MODULE TWO/flexible'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
     <Output/>
     <Delete/>
     <Key/>
+    <Flexible/>
   </React.StrictMode>
 );
 

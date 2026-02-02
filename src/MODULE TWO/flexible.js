@@ -22,16 +22,24 @@ class state extends Component {
     this.setState({ showPersons: !doesShow });
   };
 
-  nameChangedHandler = (event) => {
-    this.setState({
-      persons: [
-        { name: "jordan ayu", age: 20 },
-        { name: event.target.value, age: 22 },
-        { name: "blair rwahigi", age: 24 },
-      ],
-    });
-  };
+ nameChangedHandler = (event,id) => { 
+    const personIndex = this.state.persons.findIndex(p => {
+        return p.id === id;
+    })
 
+    const person = {
+        ...this.state.persons[personIndex]
+    }
+
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person;
+     
+
+    this.setState({persons : persons})
+      
+  };
   render() {
 
     // inline styling the button
@@ -55,7 +63,7 @@ class state extends Component {
               key = {person.id}
               name={person.name}
               age={person.age}
-              changed={this.nameChangedHandler}
+              changed={(event) =>this.nameChangedHandler(event,person.id)}
             >
               {/* Example child text (optional) */}
             </Person>
@@ -66,7 +74,7 @@ class state extends Component {
     return (
       <div>
         <button style={style} onClick={this.togglePersonHandler}>
-          key and state
+          flexible
         </button>
 
         {persons}
