@@ -12,7 +12,10 @@ import Way from './MODULE TWO/javascript';
 import Output from './MODULE TWO/lists';
 import Delete from './MODULE TWO/immutable';
 import Key from './MODULE TWO/keys'
-import Flexible from './MODULE TWO/flexible'
+import Flexible from './MODULE TWO/flexible';
+import Solution from './MODULE TWO/moduleassignment'
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +31,9 @@ root.render(
     <Delete/>
     <Key/>
     <Flexible/>
+    <Solution/>
+    
+    
   </React.StrictMode>
 );
 
