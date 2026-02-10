@@ -13,7 +13,10 @@ import Output from './MODULE TWO/lists';
 import Delete from './MODULE TWO/immutable';
 import Key from './MODULE TWO/keys'
 import Flexible from './MODULE TWO/flexible';
-import Solution from './MODULE TWO/moduleassignment'
+import Solution from './MODULE TWO/moduleassignment';
+import Char from './char/char';
+import Dynamic from './MODULE THREE/styling';
+import Try from './MODULE THREE/classnamestyling'
 
 
 
@@ -32,7 +35,9 @@ root.render(
     <Key/>
     <Flexible/>
     <Solution/>
-    
+    <Char/>
+    <Dynamic/>
+    <Try/>
     
   </React.StrictMode>
 );
