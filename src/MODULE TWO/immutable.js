@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Person from './helper.js';
+
 class Delete extends Component {
   state = {
     persons: [

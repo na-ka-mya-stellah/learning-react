@@ -17,6 +17,8 @@ import Solution from './MODULE TWO/moduleassignment';
 import Char from './char/char';
 import Dynamic from './MODULE THREE/styling';
 import Try from './MODULE THREE/classnamestyling'
+// import StyledDiv from './MODULE THREE/styledcomponents'
+
 
 
 
@@ -38,7 +40,7 @@ root.render(
     <Char/>
     <Dynamic/>
     <Try/>
-    
+    {/* <StyledDiv/> */}
   </React.StrictMode>
 );
 

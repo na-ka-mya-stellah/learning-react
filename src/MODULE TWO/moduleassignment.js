@@ -1,10 +1,9 @@
 
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
 import Validation from '../validation/validation';
 import Char from '../char/char';
-import { Component } from 'react';
-
-
+// import Userinput from '../UserInput/Userinput';
+// 
 class Solution extends Component {
     state = {
         Userinput: '',

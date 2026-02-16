@@ -1,5 +1,8 @@
 import { Component } from 'react';
 import Person from '../Person/Person';
+
+
+
 class Dynamic extends Component {
   state = {
     persons: [
@@ -65,7 +68,7 @@ class Dynamic extends Component {
       style.backgroundColor = 'red';
     }
     return (
-      <div className = 'App'>
+      <div className >
         <button style={style} onClick={this.togglePersonHandler}>
           dynamic styling button
         </button>

@@ -1,26 +1,44 @@
 import { Component } from 'react';
 import Person from '../Person/Person';
 import '../App.css';
+import styled from 'styled-components';
+
+// Styled button
+const StyledButton = styled.button`
+  width: 25%;
+  margin:  16px auto;
+  border: 1px solid #eee;
+  box-shadow: 0px 1px 3px #ccc;
+  padding: 16px;
+  cursor: pointer;
+  color:black;
+  
+
+  @media (min-width: 500px) {
+    width: 450px;
+  }
+`;
+
 class Try extends Component {
   state = {
     persons: [
-      { name : 'jordan', age: 20 },
+      { name: 'jordan', age: 20 },
       { name: 'manzi', age: 22 },
       { name: 'blair', age: 24 },
     ],
     showPersons: true,
   };
 
-  // delete one person (immutably) based on its index in the array
   deletePersonHandler = (personIndex) => {
-    const persons = [...this.state.persons]; // create a copy, don't mutate state directly
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({ persons });
   };
 
   togglePersonHandler = () => {
-    const doesShow = this.state.showPersons;
-    this.setState({ showPersons: !doesShow });
+    this.setState((prevState) => ({
+      showPersons: !prevState.showPersons,
+    }));
   };
 
   nameChangedHandler = (event) => {
@@ -32,54 +50,43 @@ class Try extends Component {
   };
 
   render() {
-
-    // inline styling the button
-    const style = {
-      backgroundColor: "black",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "20px",
-      cursor: "pointer",
-      alignItems : 'center',
-      color: 'white'
-    };
-
     let persons = null;
     const classes = [];
 
-    // outputting lists
     if (this.state.showPersons) {
       persons = (
         <div>
           {this.state.persons.map((person, index) => (
             <Person
+              key={index}
               click={() => this.deletePersonHandler(index)}
               name={person.name}
               age={person.age}
               changed={this.nameChangedHandler}
-            >
-              {/* Example child text (optional) */}
-            </Person>
+            />
           ))}
         </div>
       );
 
-    //   styling classNames dynamically
-      
-      if (this.state.persons.length <=2){
-        classes.push('red')
+      if (this.state.persons.length <= 2) {
+        classes.push('red');
       }
 
-      if (this.state.persons.length <=1){
-        classes.push('bold')
+      if (this.state.persons.length <= 1) {
+        classes.push('bold');
       }
+      
+      
     }
+
     return (
-      <div className = 'App'>
-        <button style={style} onClick={this.togglePersonHandler}>
+      <div>
+        <StyledButton onClick={this.togglePersonHandler}>
           classname styling button
-        </button>
-        <h2 className = {classes.join(' ')}>its really working</h2>
+        </StyledButton>
+
+        <h2 className={classes.join(' ')}>its really working</h2>
+
         {persons}
       </div>
     );
