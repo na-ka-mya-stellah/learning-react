@@ -1,23 +1,8 @@
+// 
+
 import React, { Component } from 'react';
 import Person from '../Person/Person';
-import styled from 'styled-components';
-
-// Styled button using styled-components
-const StyledButton = styled.button`
-  font: inherit;
-  border: 1px solid blue;
-  padding: 10px 20px;
-  cursor: pointer;
-  color: white;
-  background-color: green;
-
-  &:hover {
-    background-color: light green;
-    color: black;
-  }
-`;
-
-class Dynamic extends Component {
+class Bounce extends Component {
   state = {
     persons: [
       { name: 'jordan', age: 20 },
@@ -64,16 +49,17 @@ class Dynamic extends Component {
 
     return (
       <div>
-        <StyledButton
+        <Button
+         alt = {this.state.showPersons}
           show={this.state.showPersons}
           onClick={this.togglePersonHandler}
         >
-          toggle persons
-        </StyledButton>
+          changed and styled button
+        </Button>
         {persons}
       </div>
     );
   }
 }
 
-export default Dynamic;
+export default Bounce;

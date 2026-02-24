@@ -8,16 +8,16 @@ const StyledButton = styled.button`
   border: 1px solid blue;
   padding: 10px 20px;
   cursor: pointer;
-  color: white;
-  background-color: green;
+  color: violet;
+  background-color: ${props => props.alt ? 'olive' : 'black' };
 
   &:hover {
-    background-color: light green;
+    background-color: ${props => props.alt ? 'salmon': 'blue'};
     color: black;
   }
 `;
 
-class Dynamic extends Component {
+class Bounce extends Component {
   state = {
     persons: [
       { name: 'jordan', age: 20 },
@@ -65,10 +65,11 @@ class Dynamic extends Component {
     return (
       <div>
         <StyledButton
+         alt = {this.state.showPersons}
           show={this.state.showPersons}
           onClick={this.togglePersonHandler}
         >
-          toggle persons
+          changed and styled button
         </StyledButton>
         {persons}
       </div>
@@ -76,4 +77,4 @@ class Dynamic extends Component {
   }
 }
 
-export default Dynamic;
+export default Bounce;
