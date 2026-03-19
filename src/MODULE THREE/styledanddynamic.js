@@ -77,4 +77,4 @@ class Bounce extends Component {
   }
 }
 
-export default Bounce;
+export default Bounce; 

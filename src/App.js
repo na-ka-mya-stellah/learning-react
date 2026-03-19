@@ -6,9 +6,8 @@ import Count from "./components/Count";
 import Person from "./Person/Person";
 import Content from "./Person/Dynamiccontent";
 
-
-
 class App extends Component {
+     
 
   state = {
    
@@ -53,11 +52,9 @@ class App extends Component {
       <div>
         <Read />
         <Count />
-        
         <button style={style} onClick={this.switchNameHandler}>
           switch name
         </button>
-
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
@@ -76,7 +73,7 @@ class App extends Component {
           age={this.state.persons[2].age}
         >
           My Most loved game is basketball
-        </Person>
+        </Person> 
 
         <Content />
       </div>

@@ -1,13 +1,6 @@
 
-import React from 'react'
-import './Person.css';
-// example 2
 
-// making our components configurable and flexible
-// working with props
-
-
-const Person = (props) => {
+const Puppy = (props) => {
    
     return(
         <div className >
@@ -21,7 +14,5 @@ const Person = (props) => {
     </div>
     )
 }
-export default Person;
-
-
+export default Puppy;
 

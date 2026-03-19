@@ -1,13 +1,14 @@
 // 
-
+import styles from './button.module.css'
 import React, { Component } from 'react';
 import Person from '../Person/Person';
+
 class Bounce extends Component {
   state = {
     persons: [
-      { name: 'jordan', age: 20 },
-      { name: 'manzi', age: 22 },
-      { name: 'blair', age: 24 },
+      { id: 1, name: 'jordan', age: 20 },
+      { id: 2, name: 'manzi', age: 22 },
+      { id: 3, name: 'blair', age: 24 },
     ],
     showPersons: true,
   };
@@ -19,7 +20,9 @@ class Bounce extends Component {
   };
 
   togglePersonHandler = () => {
-    this.setState((prevState) => ({ showPersons: !prevState.showPersons }));
+    this.setState((prevState) => ({
+      showPersons: !prevState.showPersons,
+    }));
   };
 
   nameChangedHandler = (event, index) => {
@@ -36,7 +39,7 @@ class Bounce extends Component {
         <div>
           {this.state.persons.map((person, index) => (
             <Person
-              key={index}
+              key={person.id}
               click={() => this.deletePersonHandler(index)}
               name={person.name}
               age={person.age}
@@ -49,13 +52,9 @@ class Bounce extends Component {
 
     return (
       <div>
-        <Button
-         alt = {this.state.showPersons}
-          show={this.state.showPersons}
-          onClick={this.togglePersonHandler}
-        >
-          changed and styled button
-        </Button>
+        <button className ={styles.button}  onClick={this.togglePersonHandler}>
+          convert Persons
+        </button>
         {persons}
       </div>
     );
